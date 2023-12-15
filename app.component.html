@@ -1,0 +1,34 @@
+<div class="container">
+  <h3 class="mt-4 bg-primary p-2">New Employee</h3>
+<div class="row">
+  <div class="col-4">  <label for="name"><b>Name</b></label>
+    <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="employeeObj.name">
+  </div>
+  <div class="col-4">  <label for="age"><b>Age</b></label>
+    <input type="text" class="form-control" placeholder="Age" [(ngModel)]="employeeObj.age">
+  </div>
+  <div class="col-1 mt-4 text-end">
+<button class="btn btn-sm bg-primary" (click)="addEmployee()">Save Employee</button>
+  </div>
+  </div>
+
+  <h4 class="mt-4">List of Employees</h4>
+ <table class="table"> 
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Age</th>
+
+  </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let relatives of relative; let i=index">
+      <td>{{relatives.name}}</td>
+      <td>{{relatives.age}}</td>
+      <td>
+        <button class="btn btn-sm btn-success" (click)="editEmployee(i)">Edit</button>
+        <button class="btn btn-sm btn-danger " (click)="deleteEmployee(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody></table> </div>
